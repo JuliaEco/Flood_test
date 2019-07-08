@@ -1,0 +1,16 @@
+# breach test
+DEMfile         DEM.asc
+resroot         res
+dirroot         test_t
+sim_time        356400
+initial_tstep   5.0
+massint         3600.0
+saveint         356400
+fpfric          0.015
+bcifile         bci.bci
+bdyfile         bdy.bdy
+adaptoff
+sgc_enable
+drycheckon
+elevoff
+max_Froude          1   
