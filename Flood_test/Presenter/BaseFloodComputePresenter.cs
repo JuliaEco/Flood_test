@@ -1,12 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
+﻿
 namespace Presenter
 {
-    class BaseFloodComputePresenter : IPresenter
+    public class BaseFloodComputePresenter : IPresenter
     {
         private readonly IView _view;
         private readonly IComputeModel _service;

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Presenter;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -10,11 +11,23 @@ using System.Windows.Forms;
 
 namespace Flood_test
 {
-    public partial class Form1 : Form
+    public partial class Form1 : Form, IView
     {
         public Form1()
         {
             InitializeComponent();
+        }
+
+        public event Action Compute;
+
+        public void ShowResult(string result)
+        {
+            throw new NotImplementedException();
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

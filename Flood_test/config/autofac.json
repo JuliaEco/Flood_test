@@ -1,0 +1,35 @@
+{
+  "defaultAssembly": "Flood_test",
+  "components": [
+	{
+	  "type": "Flood_test.Form1,Flood_test",
+	  "services": [
+		{
+		  "type": "Presenter.IView,Presenter"
+		}
+	  ],
+	  "instanceScope": "single-instance",
+	  "injectProperties": true
+	},
+	{
+	  "type": "Model.ComputerModel,Model",
+	  "services": [
+		{
+		  "type": "Presenter.IComputeModel,Presenter"
+		}
+	  ],
+	  "instanceScope": "single-instance",
+	  "injectProperties": true
+	},
+	{
+	  "type": "Presenter.BaseFloodComputePresenter,Presenter",
+	  "services": [
+		{
+		  "type": "Presenter.IPresenter,Presenter"
+		}
+	  ],
+	  "instanceScope": "single-instance",
+	  "injectProperties": true
+	}
+  ]
+}

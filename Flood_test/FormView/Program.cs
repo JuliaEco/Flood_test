@@ -1,7 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using Configurator;
+using System;
 using System.Windows.Forms;
 
 namespace Flood_test
@@ -16,7 +14,11 @@ namespace Flood_test
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form1());
+            AppConfigurator.Run();
+            //var presenter = new BaseFloodComputePresenter(new Form1(), new ComputerModel());
+            //Presenter.Run();
+            //Application.Run(new Form1());
         }
+
     }
 }
