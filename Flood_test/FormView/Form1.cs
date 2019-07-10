@@ -20,6 +20,11 @@ namespace Flood_test
 
         public event Action Compute;
 
+        public new void Show()
+        {
+            Application.Run(this);
+        }
+
         public void ShowResult(string result)
         {
             throw new NotImplementedException();
