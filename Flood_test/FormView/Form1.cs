@@ -20,6 +20,11 @@ namespace Flood_test
 
         public event Action Compute;
 
+        public new void Show()
+        {
+            Application.Run(this);
+        }
+
         public void ShowResult(string result)
         {
             throw new NotImplementedException();
@@ -29,5 +34,16 @@ namespace Flood_test
         {
 
         }
+
+        private void Calculate_Click(object sender, EventArgs e)
+        {
+            Invoke(Compute);
+        }
+
+        private void Invoke(Action action)
+        {
+            if (action != null) action();
+        }
+
     }
 }
