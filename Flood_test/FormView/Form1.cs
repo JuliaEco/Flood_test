@@ -29,5 +29,16 @@ namespace Flood_test
         {
 
         }
+
+        private void Calculate_Click(object sender, EventArgs e)
+        {
+            Invoke(Compute);
+        }
+
+        private void Invoke(Action action)
+        {
+            if (action != null) action();
+        }
+
     }
 }

@@ -28,13 +28,25 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.ComputeBtn = new System.Windows.Forms.Button();
             this.SuspendLayout();
+            // 
+            // ComputeBtn
+            // 
+            this.ComputeBtn.Location = new System.Drawing.Point(322, 356);
+            this.ComputeBtn.Name = "ComputeBtn";
+            this.ComputeBtn.Size = new System.Drawing.Size(75, 23);
+            this.ComputeBtn.TabIndex = 0;
+            this.ComputeBtn.Text = "Compute";
+            this.ComputeBtn.UseVisualStyleBackColor = true;
+            this.ComputeBtn.Click += new System.EventHandler(this.Calculate_Click);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.ComputeBtn);
             this.Name = "Form1";
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
@@ -43,6 +55,8 @@
         }
 
         #endregion
+
+        private System.Windows.Forms.Button ComputeBtn;
     }
 }
 
