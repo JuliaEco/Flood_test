@@ -11,7 +11,6 @@ namespace Model
         {
             var result = RunComputer();
             return result;
-            //throw new NotImplementedException();
         }
 
         private string RunComputer()
@@ -20,7 +19,7 @@ namespace Model
             {
                 CreateNoWindow = false,
                 UseShellExecute = false,
-                FileName = "..\\..\\..\\Computer\\11lisfloodRelease_double.exe",
+                FileName = "..\\..\\..\\Computer\\lisfloodRelease_double.exe",
                 WindowStyle = ProcessWindowStyle.Hidden
             };
             //startInfo.Arguments = "-f j -o \"" + ex1 + "\" -z 1.0 -s y " + ex2;
