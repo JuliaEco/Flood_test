@@ -27,12 +27,19 @@ namespace Flood_test
 
         public void ShowResult(string result)
         {
-            throw new NotImplementedException();
+            ShowMessage(result, "Result");
         }
 
         private void Form1_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void ShowMessage(string text, string caption)
+        {
+            MessageBoxButtons buttons = MessageBoxButtons.OK;
+
+            MessageBox.Show(text, caption, buttons);
         }
 
         private void Calculate_Click(object sender, EventArgs e)
