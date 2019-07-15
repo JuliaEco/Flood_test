@@ -124,15 +124,6 @@ namespace Flood_test
             string filename = DEMfileOpen.FileName;
             DEMpath.Text = filename;
         }
-        private void DEMFileOpen_FileOk(object sender, CancelEventArgs e)
-        {
-
-        }
-        private void DEMpath_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-
+     
     }
 }
