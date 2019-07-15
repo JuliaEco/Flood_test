@@ -107,5 +107,32 @@ namespace Flood_test
             string filename = bdyFileOpen.FileName;
             BdyPath.Text = filename;
         }
+
+        private void bdyFileOpen_FileOk(object sender, CancelEventArgs e)
+        {
+
+        }
+        private void BciPath_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+
+            if (DEMfileOpen.ShowDialog() == DialogResult.Cancel)
+                return;
+            string filename = DEMfileOpen.FileName;
+            DEMpath.Text = filename;
+        }
+        private void DEMFileOpen_FileOk(object sender, CancelEventArgs e)
+        {
+
+        }
+        private void DEMpath_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+
     }
 }
