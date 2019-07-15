@@ -86,5 +86,26 @@ namespace Flood_test
         {
 
         }
+
+        private void Button1_Click(object sender, EventArgs e)
+        {
+            if (bciFileOpen.ShowDialog() == DialogResult.Cancel)
+                return;
+            string filename = bciFileOpen.FileName;
+            BciPath.Text = filename;
+        }
+
+        private void BcFile_FileOk(object sender, CancelEventArgs e)
+        {
+
+        }
+
+        private void BdiOpen_Click(object sender, EventArgs e)
+        {
+            if (bdyFileOpen.ShowDialog() == DialogResult.Cancel)
+                return;
+            string filename = bdyFileOpen.FileName;
+            BdyPath.Text = filename;
+        }
     }
 }
