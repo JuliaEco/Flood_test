@@ -1,12 +1,6 @@
 ﻿using Presenter;
 using System;
-using System.Collections.Generic;
 using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Flood_test
@@ -18,7 +12,7 @@ namespace Flood_test
             InitializeComponent();
         }
 
-        public event Action Compute;
+        public event Action<FloodDataParameters> Compute;
 
         public new void Show()
         {
@@ -47,24 +41,11 @@ namespace Flood_test
             Invoke(Compute);
         }
 
-        private void Invoke(Action action)
+        private void Invoke(Action<FloodDataParameters> action)
         {
-            if (action != null) action();
-        }
-
-        private void checkBox1_CheckedChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void checkBox4_CheckedChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
-        {
-
+            var parameters = new FloodDataParameters(); // you need to replace this constructor
+                                                        //to another in this class and set params from your form
+            action?.Invoke(parameters);
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -73,11 +54,6 @@ namespace Flood_test
         }
 
         private void label2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBox2_TextChanged(object sender, EventArgs e)
         {
 
         }
@@ -109,10 +85,6 @@ namespace Flood_test
         }
 
         private void bdyFileOpen_FileOk(object sender, CancelEventArgs e)
-        {
-
-        }
-        private void BciPath_TextChanged(object sender, EventArgs e)
         {
 
         }

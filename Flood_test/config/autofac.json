@@ -30,6 +30,16 @@
 	  ],
 	  "instanceScope": "single-instance",
 	  "injectProperties": true
+	},
+	{
+	  "type": "Presenter.ProjectConfigurator,Presenter",
+	  "services": [
+		{
+		  "type": "Presenter.IProjectConfigurator,Presenter"
+		}
+	  ],
+	  "instanceScope": "single-instance",
+	  "injectProperties": true
 	}
   ]
 }

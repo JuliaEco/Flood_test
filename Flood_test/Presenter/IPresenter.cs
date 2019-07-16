@@ -2,6 +2,6 @@
 {
     public interface IPresenter
     {
-        void Run();
+        void Run(IProjectConfigurator configurator);
     }
 }
