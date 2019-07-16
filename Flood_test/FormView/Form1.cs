@@ -1,12 +1,6 @@
 ﻿using Presenter;
 using System;
-using System.Collections.Generic;
 using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Flood_test
@@ -18,7 +12,7 @@ namespace Flood_test
             InitializeComponent();
         }
 
-        public event Action Compute;
+        public event Action<FloodDataParameters> Compute;
 
         public new void Show()
         {
@@ -47,24 +41,13 @@ namespace Flood_test
             Invoke(Compute);
         }
 
-        private void Invoke(Action action)
+        private void Invoke(Action<FloodDataParameters> action)
         {
-            if (action != null) action();
-        }
-
-        private void checkBox1_CheckedChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void checkBox4_CheckedChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
-        {
-
+            var parameters = new FloodDataParameters(DEMpath.Text, resroot.Text, rootFolder.Text,
+            sim_time.Text, init_tstep.Text, massint.Text, saveint.Text,
+             fpfric.Text, BciPath.Text, BdyPath.Text, adaptoff.Checked,
+             sgc_enable.Checked, drycheckon.Checked, elevoff.Checked, max_Froude.Text); 
+            action?.Invoke(parameters);
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -73,11 +56,6 @@ namespace Flood_test
         }
 
         private void label2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBox2_TextChanged(object sender, EventArgs e)
         {
 
         }
@@ -112,10 +90,6 @@ namespace Flood_test
         {
 
         }
-        private void BciPath_TextChanged(object sender, EventArgs e)
-        {
-
-        }
         private void button1_Click_1(object sender, EventArgs e)
         {
 
@@ -124,15 +98,54 @@ namespace Flood_test
             string filename = DEMfileOpen.FileName;
             DEMpath.Text = filename;
         }
-        private void DEMFileOpen_FileOk(object sender, CancelEventArgs e)
+
+        private void SelectRootFolderBtn_Click(object sender, EventArgs e)
+        {
+
+            if (RootFolderOpen.ShowDialog() == DialogResult.Cancel)
+                return;
+            string path = RootFolderOpen.SelectedPath;
+            rootFolder.Text = path;
+        }
+
+        private void checkBox1_CheckedChanged(object sender, EventArgs e)
         {
 
         }
-        private void DEMpath_TextChanged(object sender, EventArgs e)
+
+        private void label5_Click(object sender, EventArgs e)
         {
 
         }
 
+        private void textBox4_TextChanged(object sender, EventArgs e)
+        {
 
+        }
+
+        private void textBox11_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label17_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void resroot_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void elevoff_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void sgc_enable_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
