@@ -54,9 +54,8 @@
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.textBox4 = new System.Windows.Forms.TextBox();
-            this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.rootFolderText = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.DEMpath = new System.Windows.Forms.TextBox();
@@ -68,6 +67,8 @@
             this.bciFileOpen = new System.Windows.Forms.OpenFileDialog();
             this.bdyFileOpen = new System.Windows.Forms.OpenFileDialog();
             this.DEMfileOpen = new System.Windows.Forms.OpenFileDialog();
+            this.RootFolderOpen = new System.Windows.Forms.FolderBrowserDialog();
+            this.SelectRootFolderBtn = new System.Windows.Forms.Button();
             this.tabPage2.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.SuspendLayout();
@@ -77,7 +78,7 @@
             this.ComputeBtn.Location = new System.Drawing.Point(672, 415);
             this.ComputeBtn.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.ComputeBtn.Name = "ComputeBtn";
-            this.ComputeBtn.Size = new System.Drawing.Size(106, 23);
+            this.ComputeBtn.Size = new System.Drawing.Size(107, 23);
             this.ComputeBtn.TabIndex = 0;
             this.ComputeBtn.Text = "Compute";
             this.ComputeBtn.UseVisualStyleBackColor = true;
@@ -85,6 +86,7 @@
             // 
             // tabPage2
             // 
+            this.tabPage2.Controls.Add(this.SelectRootFolderBtn);
             this.tabPage2.Controls.Add(this.button1);
             this.tabPage2.Controls.Add(this.BdyPath);
             this.tabPage2.Controls.Add(this.BciPath);
@@ -109,9 +111,8 @@
             this.tabPage2.Controls.Add(this.label5);
             this.tabPage2.Controls.Add(this.label6);
             this.tabPage2.Controls.Add(this.textBox4);
-            this.tabPage2.Controls.Add(this.label4);
             this.tabPage2.Controls.Add(this.label3);
-            this.tabPage2.Controls.Add(this.textBox3);
+            this.tabPage2.Controls.Add(this.rootFolderText);
             this.tabPage2.Controls.Add(this.label2);
             this.tabPage2.Controls.Add(this.textBox2);
             this.tabPage2.Controls.Add(this.DEMpath);
@@ -130,9 +131,10 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(150, 135);
+            this.button1.Location = new System.Drawing.Point(655, 196);
+            this.button1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(128, 32);
+            this.button1.Size = new System.Drawing.Size(100, 30);
             this.button1.TabIndex = 38;
             this.button1.Text = "Open DEM .asc";
             this.button1.UseVisualStyleBackColor = true;
@@ -142,7 +144,7 @@
             // 
             this.BdyPath.Enabled = false;
             this.BdyPath.Location = new System.Drawing.Point(513, 149);
-            this.BdyPath.Margin = new System.Windows.Forms.Padding(4);
+            this.BdyPath.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.BdyPath.Name = "BdyPath";
             this.BdyPath.Size = new System.Drawing.Size(132, 22);
             this.BdyPath.TabIndex = 37;
@@ -151,16 +153,15 @@
             // 
             this.BciPath.Enabled = false;
             this.BciPath.Location = new System.Drawing.Point(513, 101);
-            this.BciPath.Margin = new System.Windows.Forms.Padding(4);
+            this.BciPath.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.BciPath.Name = "BciPath";
             this.BciPath.Size = new System.Drawing.Size(132, 22);
             this.BciPath.TabIndex = 36;
-            this.BciPath.TextChanged += new System.EventHandler(this.BciPath_TextChanged);
             // 
             // BdyOpen
             // 
             this.BdyOpen.Location = new System.Drawing.Point(655, 146);
-            this.BdyOpen.Margin = new System.Windows.Forms.Padding(4);
+            this.BdyOpen.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.BdyOpen.Name = "BdyOpen";
             this.BdyOpen.Size = new System.Drawing.Size(100, 28);
             this.BdyOpen.TabIndex = 35;
@@ -171,7 +172,7 @@
             // BciOpen
             // 
             this.BciOpen.Location = new System.Drawing.Point(655, 98);
-            this.BciOpen.Margin = new System.Windows.Forms.Padding(4);
+            this.BciOpen.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.BciOpen.Name = "BciOpen";
             this.BciOpen.Size = new System.Drawing.Size(100, 28);
             this.BciOpen.TabIndex = 34;
@@ -182,11 +183,11 @@
             // label19
             // 
             this.label19.AutoSize = true;
-            this.label19.Location = new System.Drawing.Point(587, 65);
+            this.label19.Location = new System.Drawing.Point(509, 74);
             this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(137, 17);
+            this.label19.Size = new System.Drawing.Size(12, 17);
             this.label19.TabIndex = 33;
-            this.label19.Text = "Boundary conditions";
+            this.label19.Text = " ";
             // 
             // label17
             // 
@@ -338,15 +339,6 @@
             this.textBox4.Size = new System.Drawing.Size(100, 22);
             this.textBox4.TabIndex = 11;
             // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(147, 225);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(49, 17);
-            this.label4.TabIndex = 10;
-            this.label4.Text = "dirroot";
-            // 
             // label3
             // 
             this.label3.AutoSize = true;
@@ -355,13 +347,13 @@
             this.label3.Size = new System.Drawing.Size(0, 17);
             this.label3.TabIndex = 9;
             // 
-            // textBox3
+            // rootFolderText
             // 
-            this.textBox3.Location = new System.Drawing.Point(24, 220);
-            this.textBox3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(100, 22);
-            this.textBox3.TabIndex = 8;
+            this.rootFolderText.Location = new System.Drawing.Point(24, 220);
+            this.rootFolderText.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.rootFolderText.Name = "rootFolderText";
+            this.rootFolderText.Size = new System.Drawing.Size(100, 22);
+            this.rootFolderText.TabIndex = 8;
             // 
             // label2
             // 
@@ -380,15 +372,14 @@
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(100, 22);
             this.textBox2.TabIndex = 6;
-            this.textBox2.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
             // 
             // DEMpath
             // 
             this.DEMpath.Enabled = false;
-            this.DEMpath.Location = new System.Drawing.Point(24, 140);
+            this.DEMpath.Location = new System.Drawing.Point(513, 201);
             this.DEMpath.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.DEMpath.Name = "DEMpath";
-            this.DEMpath.Size = new System.Drawing.Size(100, 22);
+            this.DEMpath.Size = new System.Drawing.Size(132, 22);
             this.DEMpath.TabIndex = 4;
             // 
             // checkBox4
@@ -401,7 +392,6 @@
             this.checkBox4.TabIndex = 3;
             this.checkBox4.Text = "elevoff";
             this.checkBox4.UseVisualStyleBackColor = true;
-            this.checkBox4.CheckedChanged += new System.EventHandler(this.checkBox4_CheckedChanged);
             // 
             // checkBox3
             // 
@@ -435,7 +425,6 @@
             this.checkBox1.TabIndex = 0;
             this.checkBox1.Text = "adaptoff";
             this.checkBox1.UseVisualStyleBackColor = true;
-            this.checkBox1.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
             // 
             // tabControl1
             // 
@@ -463,6 +452,20 @@
             // 
             this.DEMfileOpen.FileName = "DEMfileOpen";
             this.DEMfileOpen.Filter = "DEM-files|*.asc";
+            // 
+            // RootFolderOpen
+            // 
+            this.RootFolderOpen.RootFolder = System.Environment.SpecialFolder.MyComputer;
+            // 
+            // SelectRootFolderBtn
+            // 
+            this.SelectRootFolderBtn.Location = new System.Drawing.Point(130, 220);
+            this.SelectRootFolderBtn.Name = "SelectRootFolderBtn";
+            this.SelectRootFolderBtn.Size = new System.Drawing.Size(103, 23);
+            this.SelectRootFolderBtn.TabIndex = 39;
+            this.SelectRootFolderBtn.Text = "Root Folder";
+            this.SelectRootFolderBtn.UseVisualStyleBackColor = true;
+            this.SelectRootFolderBtn.Click += new System.EventHandler(this.SelectRootFolderBtn_Click);
             // 
             // Form1
             // 
@@ -512,9 +515,8 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox rootFolderText;
         private System.Windows.Forms.OpenFileDialog bciFileOpen;
         private System.Windows.Forms.Button BciOpen;
         private System.Windows.Forms.TextBox BdyPath;
@@ -523,6 +525,8 @@
         private System.Windows.Forms.OpenFileDialog bdyFileOpen;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.OpenFileDialog DEMfileOpen;
+        private System.Windows.Forms.Button SelectRootFolderBtn;
+        private System.Windows.Forms.FolderBrowserDialog RootFolderOpen;
     }
 }
 

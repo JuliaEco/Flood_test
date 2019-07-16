@@ -10,8 +10,9 @@ namespace Configurator
         public static void Run()
         {
             var container = GetDependencies();
+            var configurator = container.Resolve<IProjectConfigurator>();
             var presenter = container.Resolve<IPresenter>();
-            presenter.Run();
+            presenter.Run(configurator);
         }
 
         private static IContainer GetDependencies()

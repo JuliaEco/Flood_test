@@ -2,6 +2,6 @@
 {
     public interface IComputeModel
     {
-        string Compute();
+        string Compute(FloodDataParameters parameters);
     }
 }

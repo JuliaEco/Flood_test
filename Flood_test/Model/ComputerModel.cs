@@ -1,28 +1,32 @@
 ﻿using Presenter;
 using System;
 using System.Diagnostics;
+using System.IO;
 
 namespace Model
 {
     public class ComputerModel : IComputeModel
     {
-        private string SuccessMessage = "Successfully computed";
-        public string Compute()
+        private const string SuccessMessage = "Successfully computed";
+        private const string UtilityName = "lisfloodRelease_double.exe";
+        public string Compute(FloodDataParameters parameters)
         {
-            var result = RunComputer();
+            File.Copy($"..\\..\\..\\Computer\\{UtilityName}", parameters.Rootdir);
+            var result = RunComputer(parameters);
             return result;
         }
 
-        private string RunComputer()
+        private string RunComputer(FloodDataParameters parameters)
         {
+            
             ProcessStartInfo startInfo = new ProcessStartInfo
             {
                 CreateNoWindow = false,
                 UseShellExecute = false,
-                FileName = "..\\..\\..\\Computer\\lisfloodRelease_double.exe",
-                WindowStyle = ProcessWindowStyle.Hidden
+                FileName = Path.Combine(parameters.Rootdir, UtilityName),
+                WindowStyle = ProcessWindowStyle.Hidden,
+                Arguments = $"-v {parameters.ResultFileName}"
             };
-            //startInfo.Arguments = "-f j -o \"" + ex1 + "\" -z 1.0 -s y " + ex2;
 
             try
             {

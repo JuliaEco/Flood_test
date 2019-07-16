@@ -41,9 +41,13 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BaseFloodComputePresenter.cs" />
+    <Compile Include="FloodDataFormatter.cs" />
+    <Compile Include="FloodDataParameters.cs" />
     <Compile Include="IComputeModel.cs" />
     <Compile Include="IPresenter.cs" />
+    <Compile Include="IProjectConfigurator.cs" />
     <Compile Include="IView.cs" />
+    <Compile Include="ProjectConfigurator.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="Autofac, Version=4.9.2.0, Culture=neutral, PublicKeyToken=17863af14b0044da, processorArchitecture=MSIL">
