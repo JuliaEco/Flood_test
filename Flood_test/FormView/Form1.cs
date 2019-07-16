@@ -96,6 +96,14 @@ namespace Flood_test
             string filename = DEMfileOpen.FileName;
             DEMpath.Text = filename;
         }
-     
+
+        private void SelectRootFolderBtn_Click(object sender, EventArgs e)
+        {
+
+            if (RootFolderOpen.ShowDialog() == DialogResult.Cancel)
+                return;
+            string path = RootFolderOpen.SelectedPath;
+            rootFolderText.Text = path;
+        }
     }
 }
