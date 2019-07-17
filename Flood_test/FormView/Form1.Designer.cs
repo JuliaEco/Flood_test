@@ -30,7 +30,8 @@
         {
             this.ComputeBtn = new System.Windows.Forms.Button();
             this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.button1 = new System.Windows.Forms.Button();
+            this.SelectRootFolderBtn = new System.Windows.Forms.Button();
+            this.OpenDEM = new System.Windows.Forms.Button();
             this.BdyPath = new System.Windows.Forms.TextBox();
             this.BciPath = new System.Windows.Forms.TextBox();
             this.BdyOpen = new System.Windows.Forms.Button();
@@ -38,37 +39,36 @@
             this.label19 = new System.Windows.Forms.Label();
             this.label17 = new System.Windows.Forms.Label();
             this.label18 = new System.Windows.Forms.Label();
-            this.textBox11 = new System.Windows.Forms.TextBox();
+            this.max_Froude = new System.Windows.Forms.TextBox();
             this.label16 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
-            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.fpfric = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
-            this.textBox6 = new System.Windows.Forms.TextBox();
+            this.saveint = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
-            this.textBox7 = new System.Windows.Forms.TextBox();
+            this.massint = new System.Windows.Forms.TextBox();
             this.label12 = new System.Windows.Forms.Label();
-            this.textBox8 = new System.Windows.Forms.TextBox();
+            this.init_tstep = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
-            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.sim_time = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.rootFolderText = new System.Windows.Forms.TextBox();
+            this.rootFolder = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.resroot = new System.Windows.Forms.TextBox();
             this.DEMpath = new System.Windows.Forms.TextBox();
-            this.checkBox4 = new System.Windows.Forms.CheckBox();
-            this.checkBox3 = new System.Windows.Forms.CheckBox();
-            this.checkBox2 = new System.Windows.Forms.CheckBox();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
+            this.elevoff = new System.Windows.Forms.CheckBox();
+            this.sgc_enable = new System.Windows.Forms.CheckBox();
+            this.drycheckon = new System.Windows.Forms.CheckBox();
+            this.adaptoff = new System.Windows.Forms.CheckBox();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.bciFileOpen = new System.Windows.Forms.OpenFileDialog();
             this.bdyFileOpen = new System.Windows.Forms.OpenFileDialog();
             this.DEMfileOpen = new System.Windows.Forms.OpenFileDialog();
             this.RootFolderOpen = new System.Windows.Forms.FolderBrowserDialog();
-            this.SelectRootFolderBtn = new System.Windows.Forms.Button();
             this.tabPage2.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.SuspendLayout();
@@ -87,7 +87,7 @@
             // tabPage2
             // 
             this.tabPage2.Controls.Add(this.SelectRootFolderBtn);
-            this.tabPage2.Controls.Add(this.button1);
+            this.tabPage2.Controls.Add(this.OpenDEM);
             this.tabPage2.Controls.Add(this.BdyPath);
             this.tabPage2.Controls.Add(this.BciPath);
             this.tabPage2.Controls.Add(this.BdyOpen);
@@ -95,31 +95,31 @@
             this.tabPage2.Controls.Add(this.label19);
             this.tabPage2.Controls.Add(this.label17);
             this.tabPage2.Controls.Add(this.label18);
-            this.tabPage2.Controls.Add(this.textBox11);
+            this.tabPage2.Controls.Add(this.max_Froude);
             this.tabPage2.Controls.Add(this.label16);
             this.tabPage2.Controls.Add(this.label14);
             this.tabPage2.Controls.Add(this.label7);
             this.tabPage2.Controls.Add(this.label8);
-            this.tabPage2.Controls.Add(this.textBox5);
+            this.tabPage2.Controls.Add(this.fpfric);
             this.tabPage2.Controls.Add(this.label9);
             this.tabPage2.Controls.Add(this.label10);
-            this.tabPage2.Controls.Add(this.textBox6);
+            this.tabPage2.Controls.Add(this.saveint);
             this.tabPage2.Controls.Add(this.label11);
-            this.tabPage2.Controls.Add(this.textBox7);
+            this.tabPage2.Controls.Add(this.massint);
             this.tabPage2.Controls.Add(this.label12);
-            this.tabPage2.Controls.Add(this.textBox8);
+            this.tabPage2.Controls.Add(this.init_tstep);
             this.tabPage2.Controls.Add(this.label5);
             this.tabPage2.Controls.Add(this.label6);
-            this.tabPage2.Controls.Add(this.textBox4);
+            this.tabPage2.Controls.Add(this.sim_time);
             this.tabPage2.Controls.Add(this.label3);
-            this.tabPage2.Controls.Add(this.rootFolderText);
+            this.tabPage2.Controls.Add(this.rootFolder);
             this.tabPage2.Controls.Add(this.label2);
-            this.tabPage2.Controls.Add(this.textBox2);
+            this.tabPage2.Controls.Add(this.resroot);
             this.tabPage2.Controls.Add(this.DEMpath);
-            this.tabPage2.Controls.Add(this.checkBox4);
-            this.tabPage2.Controls.Add(this.checkBox3);
-            this.tabPage2.Controls.Add(this.checkBox2);
-            this.tabPage2.Controls.Add(this.checkBox1);
+            this.tabPage2.Controls.Add(this.elevoff);
+            this.tabPage2.Controls.Add(this.sgc_enable);
+            this.tabPage2.Controls.Add(this.drycheckon);
+            this.tabPage2.Controls.Add(this.adaptoff);
             this.tabPage2.Location = new System.Drawing.Point(4, 25);
             this.tabPage2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tabPage2.Name = "tabPage2";
@@ -129,22 +129,32 @@
             this.tabPage2.Text = "Parameters";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
-            // button1
+            // SelectRootFolderBtn
             // 
-            this.button1.Location = new System.Drawing.Point(655, 196);
-            this.button1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(100, 30);
-            this.button1.TabIndex = 38;
-            this.button1.Text = "Open DEM .asc";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click_1);
+            this.SelectRootFolderBtn.Location = new System.Drawing.Point(130, 220);
+            this.SelectRootFolderBtn.Name = "SelectRootFolderBtn";
+            this.SelectRootFolderBtn.Size = new System.Drawing.Size(103, 23);
+            this.SelectRootFolderBtn.TabIndex = 39;
+            this.SelectRootFolderBtn.Text = "Root Folder";
+            this.SelectRootFolderBtn.UseVisualStyleBackColor = true;
+            this.SelectRootFolderBtn.Click += new System.EventHandler(this.SelectRootFolderBtn_Click);
+            // 
+            // OpenDEM
+            // 
+            this.OpenDEM.Location = new System.Drawing.Point(655, 196);
+            this.OpenDEM.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.OpenDEM.Name = "OpenDEM";
+            this.OpenDEM.Size = new System.Drawing.Size(100, 30);
+            this.OpenDEM.TabIndex = 38;
+            this.OpenDEM.Text = "Open DEM .asc";
+            this.OpenDEM.UseVisualStyleBackColor = true;
+            this.OpenDEM.Click += new System.EventHandler(this.button1_Click_1);
             // 
             // BdyPath
             // 
             this.BdyPath.Enabled = false;
             this.BdyPath.Location = new System.Drawing.Point(513, 149);
-            this.BdyPath.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.BdyPath.Margin = new System.Windows.Forms.Padding(4);
             this.BdyPath.Name = "BdyPath";
             this.BdyPath.Size = new System.Drawing.Size(132, 22);
             this.BdyPath.TabIndex = 37;
@@ -153,7 +163,7 @@
             // 
             this.BciPath.Enabled = false;
             this.BciPath.Location = new System.Drawing.Point(513, 101);
-            this.BciPath.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.BciPath.Margin = new System.Windows.Forms.Padding(4);
             this.BciPath.Name = "BciPath";
             this.BciPath.Size = new System.Drawing.Size(132, 22);
             this.BciPath.TabIndex = 36;
@@ -161,7 +171,7 @@
             // BdyOpen
             // 
             this.BdyOpen.Location = new System.Drawing.Point(655, 146);
-            this.BdyOpen.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.BdyOpen.Margin = new System.Windows.Forms.Padding(4);
             this.BdyOpen.Name = "BdyOpen";
             this.BdyOpen.Size = new System.Drawing.Size(100, 28);
             this.BdyOpen.TabIndex = 35;
@@ -172,7 +182,7 @@
             // BciOpen
             // 
             this.BciOpen.Location = new System.Drawing.Point(655, 98);
-            this.BciOpen.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.BciOpen.Margin = new System.Windows.Forms.Padding(4);
             this.BciOpen.Name = "BciOpen";
             this.BciOpen.Size = new System.Drawing.Size(100, 28);
             this.BciOpen.TabIndex = 34;
@@ -196,7 +206,8 @@
             this.label17.Name = "label17";
             this.label17.Size = new System.Drawing.Size(86, 17);
             this.label17.TabIndex = 32;
-            this.label17.Text = "max_Forude";
+            this.label17.Text = "max_Froude";
+            this.label17.Click += new System.EventHandler(this.label17_Click);
             // 
             // label18
             // 
@@ -206,13 +217,14 @@
             this.label18.Size = new System.Drawing.Size(0, 17);
             this.label18.TabIndex = 31;
             // 
-            // textBox11
+            // max_Froude
             // 
-            this.textBox11.Location = new System.Drawing.Point(24, 295);
-            this.textBox11.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.textBox11.Name = "textBox11";
-            this.textBox11.Size = new System.Drawing.Size(100, 22);
-            this.textBox11.TabIndex = 30;
+            this.max_Froude.Location = new System.Drawing.Point(24, 295);
+            this.max_Froude.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.max_Froude.Name = "max_Froude";
+            this.max_Froude.Size = new System.Drawing.Size(100, 22);
+            this.max_Froude.TabIndex = 30;
+            this.max_Froude.TextChanged += new System.EventHandler(this.textBox11_TextChanged);
             // 
             // label16
             // 
@@ -247,13 +259,13 @@
             this.label8.Size = new System.Drawing.Size(0, 17);
             this.label8.TabIndex = 22;
             // 
-            // textBox5
+            // fpfric
             // 
-            this.textBox5.Location = new System.Drawing.Point(276, 294);
-            this.textBox5.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(100, 22);
-            this.textBox5.TabIndex = 21;
+            this.fpfric.Location = new System.Drawing.Point(276, 294);
+            this.fpfric.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.fpfric.Name = "fpfric";
+            this.fpfric.Size = new System.Drawing.Size(100, 22);
+            this.fpfric.TabIndex = 21;
             // 
             // label9
             // 
@@ -272,13 +284,13 @@
             this.label10.Size = new System.Drawing.Size(0, 17);
             this.label10.TabIndex = 19;
             // 
-            // textBox6
+            // saveint
             // 
-            this.textBox6.Location = new System.Drawing.Point(276, 258);
-            this.textBox6.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(100, 22);
-            this.textBox6.TabIndex = 18;
+            this.saveint.Location = new System.Drawing.Point(276, 258);
+            this.saveint.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.saveint.Name = "saveint";
+            this.saveint.Size = new System.Drawing.Size(100, 22);
+            this.saveint.TabIndex = 18;
             // 
             // label11
             // 
@@ -289,13 +301,13 @@
             this.label11.TabIndex = 17;
             this.label11.Text = "massint";
             // 
-            // textBox7
+            // massint
             // 
-            this.textBox7.Location = new System.Drawing.Point(276, 217);
-            this.textBox7.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(100, 22);
-            this.textBox7.TabIndex = 16;
+            this.massint.Location = new System.Drawing.Point(276, 217);
+            this.massint.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.massint.Name = "massint";
+            this.massint.Size = new System.Drawing.Size(100, 22);
+            this.massint.TabIndex = 16;
             // 
             // label12
             // 
@@ -306,13 +318,13 @@
             this.label12.TabIndex = 15;
             this.label12.Text = "initial_tstep";
             // 
-            // textBox8
+            // init_tstep
             // 
-            this.textBox8.Location = new System.Drawing.Point(276, 178);
-            this.textBox8.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.textBox8.Name = "textBox8";
-            this.textBox8.Size = new System.Drawing.Size(100, 22);
-            this.textBox8.TabIndex = 14;
+            this.init_tstep.Location = new System.Drawing.Point(276, 178);
+            this.init_tstep.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.init_tstep.Name = "init_tstep";
+            this.init_tstep.Size = new System.Drawing.Size(100, 22);
+            this.init_tstep.TabIndex = 14;
             // 
             // label5
             // 
@@ -322,6 +334,7 @@
             this.label5.Size = new System.Drawing.Size(63, 17);
             this.label5.TabIndex = 13;
             this.label5.Text = "sim_time";
+            this.label5.Click += new System.EventHandler(this.label5_Click);
             // 
             // label6
             // 
@@ -331,13 +344,14 @@
             this.label6.Size = new System.Drawing.Size(0, 17);
             this.label6.TabIndex = 12;
             // 
-            // textBox4
+            // sim_time
             // 
-            this.textBox4.Location = new System.Drawing.Point(24, 257);
-            this.textBox4.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(100, 22);
-            this.textBox4.TabIndex = 11;
+            this.sim_time.Location = new System.Drawing.Point(24, 257);
+            this.sim_time.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.sim_time.Name = "sim_time";
+            this.sim_time.Size = new System.Drawing.Size(100, 22);
+            this.sim_time.TabIndex = 11;
+            this.sim_time.TextChanged += new System.EventHandler(this.textBox4_TextChanged);
             // 
             // label3
             // 
@@ -347,13 +361,13 @@
             this.label3.Size = new System.Drawing.Size(0, 17);
             this.label3.TabIndex = 9;
             // 
-            // rootFolderText
+            // rootFolder
             // 
-            this.rootFolderText.Location = new System.Drawing.Point(24, 220);
-            this.rootFolderText.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.rootFolderText.Name = "rootFolderText";
-            this.rootFolderText.Size = new System.Drawing.Size(100, 22);
-            this.rootFolderText.TabIndex = 8;
+            this.rootFolder.Location = new System.Drawing.Point(24, 220);
+            this.rootFolder.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.rootFolder.Name = "rootFolder";
+            this.rootFolder.Size = new System.Drawing.Size(100, 22);
+            this.rootFolder.TabIndex = 8;
             // 
             // label2
             // 
@@ -365,13 +379,14 @@
             this.label2.Text = "resroot";
             this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
-            // textBox2
+            // resroot
             // 
-            this.textBox2.Location = new System.Drawing.Point(24, 178);
-            this.textBox2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(100, 22);
-            this.textBox2.TabIndex = 6;
+            this.resroot.Location = new System.Drawing.Point(24, 178);
+            this.resroot.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.resroot.Name = "resroot";
+            this.resroot.Size = new System.Drawing.Size(100, 22);
+            this.resroot.TabIndex = 6;
+            this.resroot.TextChanged += new System.EventHandler(this.resroot_TextChanged);
             // 
             // DEMpath
             // 
@@ -382,49 +397,52 @@
             this.DEMpath.Size = new System.Drawing.Size(132, 22);
             this.DEMpath.TabIndex = 4;
             // 
-            // checkBox4
+            // elevoff
             // 
-            this.checkBox4.AutoSize = true;
-            this.checkBox4.Location = new System.Drawing.Point(24, 101);
-            this.checkBox4.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.checkBox4.Name = "checkBox4";
-            this.checkBox4.Size = new System.Drawing.Size(72, 21);
-            this.checkBox4.TabIndex = 3;
-            this.checkBox4.Text = "elevoff";
-            this.checkBox4.UseVisualStyleBackColor = true;
+            this.elevoff.AutoSize = true;
+            this.elevoff.Location = new System.Drawing.Point(24, 101);
+            this.elevoff.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.elevoff.Name = "elevoff";
+            this.elevoff.Size = new System.Drawing.Size(72, 21);
+            this.elevoff.TabIndex = 3;
+            this.elevoff.Text = "elevoff";
+            this.elevoff.UseVisualStyleBackColor = true;
+            this.elevoff.CheckedChanged += new System.EventHandler(this.elevoff_CheckedChanged);
             // 
-            // checkBox3
+            // sgc_enable
             // 
-            this.checkBox3.AutoSize = true;
-            this.checkBox3.Location = new System.Drawing.Point(24, 47);
-            this.checkBox3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.checkBox3.Name = "checkBox3";
-            this.checkBox3.Size = new System.Drawing.Size(103, 21);
-            this.checkBox3.TabIndex = 2;
-            this.checkBox3.Text = "sgc_enable";
-            this.checkBox3.UseVisualStyleBackColor = true;
+            this.sgc_enable.AutoSize = true;
+            this.sgc_enable.Location = new System.Drawing.Point(24, 47);
+            this.sgc_enable.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.sgc_enable.Name = "sgc_enable";
+            this.sgc_enable.Size = new System.Drawing.Size(103, 21);
+            this.sgc_enable.TabIndex = 2;
+            this.sgc_enable.Text = "sgc_enable";
+            this.sgc_enable.UseVisualStyleBackColor = true;
+            this.sgc_enable.CheckedChanged += new System.EventHandler(this.sgc_enable_CheckedChanged);
             // 
-            // checkBox2
+            // drycheckon
             // 
-            this.checkBox2.AutoSize = true;
-            this.checkBox2.Location = new System.Drawing.Point(24, 74);
-            this.checkBox2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.checkBox2.Name = "checkBox2";
-            this.checkBox2.Size = new System.Drawing.Size(103, 21);
-            this.checkBox2.TabIndex = 1;
-            this.checkBox2.Text = "drycheckon";
-            this.checkBox2.UseVisualStyleBackColor = true;
+            this.drycheckon.AutoSize = true;
+            this.drycheckon.Location = new System.Drawing.Point(24, 74);
+            this.drycheckon.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.drycheckon.Name = "drycheckon";
+            this.drycheckon.Size = new System.Drawing.Size(103, 21);
+            this.drycheckon.TabIndex = 1;
+            this.drycheckon.Text = "drycheckon";
+            this.drycheckon.UseVisualStyleBackColor = true;
             // 
-            // checkBox1
+            // adaptoff
             // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.Location = new System.Drawing.Point(24, 20);
-            this.checkBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(82, 21);
-            this.checkBox1.TabIndex = 0;
-            this.checkBox1.Text = "adaptoff";
-            this.checkBox1.UseVisualStyleBackColor = true;
+            this.adaptoff.AutoSize = true;
+            this.adaptoff.Location = new System.Drawing.Point(24, 20);
+            this.adaptoff.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.adaptoff.Name = "adaptoff";
+            this.adaptoff.Size = new System.Drawing.Size(82, 21);
+            this.adaptoff.TabIndex = 0;
+            this.adaptoff.Text = "adaptoff";
+            this.adaptoff.UseVisualStyleBackColor = true;
+            this.adaptoff.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
             // 
             // tabControl1
             // 
@@ -457,16 +475,6 @@
             // 
             this.RootFolderOpen.RootFolder = System.Environment.SpecialFolder.MyComputer;
             // 
-            // SelectRootFolderBtn
-            // 
-            this.SelectRootFolderBtn.Location = new System.Drawing.Point(130, 220);
-            this.SelectRootFolderBtn.Name = "SelectRootFolderBtn";
-            this.SelectRootFolderBtn.Size = new System.Drawing.Size(103, 23);
-            this.SelectRootFolderBtn.TabIndex = 39;
-            this.SelectRootFolderBtn.Text = "Root Folder";
-            this.SelectRootFolderBtn.UseVisualStyleBackColor = true;
-            this.SelectRootFolderBtn.Click += new System.EventHandler(this.SelectRootFolderBtn_Click);
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -489,41 +497,41 @@
         private System.Windows.Forms.Button ComputeBtn;
         private System.Windows.Forms.TabPage tabPage2;
         private System.Windows.Forms.TextBox DEMpath;
-        private System.Windows.Forms.CheckBox checkBox4;
-        private System.Windows.Forms.CheckBox checkBox3;
-        private System.Windows.Forms.CheckBox checkBox2;
-        private System.Windows.Forms.CheckBox checkBox1;
+        private System.Windows.Forms.CheckBox elevoff;
+        private System.Windows.Forms.CheckBox sgc_enable;
+        private System.Windows.Forms.CheckBox drycheckon;
+        private System.Windows.Forms.CheckBox adaptoff;
         private System.Windows.Forms.TabControl tabControl1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox resroot;
         private System.Windows.Forms.Label label19;
         private System.Windows.Forms.Label label17;
         private System.Windows.Forms.Label label18;
-        private System.Windows.Forms.TextBox textBox11;
+        private System.Windows.Forms.TextBox max_Froude;
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.TextBox textBox5;
+        private System.Windows.Forms.TextBox fpfric;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.TextBox textBox6;
+        private System.Windows.Forms.TextBox saveint;
         private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.TextBox textBox7;
+        private System.Windows.Forms.TextBox massint;
         private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.TextBox textBox8;
+        private System.Windows.Forms.TextBox init_tstep;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.TextBox sim_time;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox rootFolderText;
+        private System.Windows.Forms.TextBox rootFolder;
         private System.Windows.Forms.OpenFileDialog bciFileOpen;
         private System.Windows.Forms.Button BciOpen;
         private System.Windows.Forms.TextBox BdyPath;
         private System.Windows.Forms.TextBox BciPath;
         private System.Windows.Forms.Button BdyOpen;
         private System.Windows.Forms.OpenFileDialog bdyFileOpen;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button OpenDEM;
         private System.Windows.Forms.OpenFileDialog DEMfileOpen;
         private System.Windows.Forms.Button SelectRootFolderBtn;
         private System.Windows.Forms.FolderBrowserDialog RootFolderOpen;

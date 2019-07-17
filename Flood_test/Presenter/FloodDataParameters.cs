@@ -15,10 +15,10 @@ namespace Presenter
         public string Fpfric { get; set; }
         public string BciFileName { get; set; }
         public string BdyFileName { get; set; }
-        public string AdaptOff { get; set; }
-        public string SgcEnable { get; set; }
-        public string DryCheckOn { get; set; }
-        public string ElevOff { get; set; }
+        public bool AdaptOff { get; set; }
+        public bool SgcEnable { get; set; }
+        public bool DryCheckOn { get; set; }
+        public bool ElevOff { get; set; }
         public string MaxFroude { get; set; }
 
         public FloodDataParameters()
@@ -27,8 +27,8 @@ namespace Presenter
 
         public FloodDataParameters(string dEMfile, string rootdir, string dirroot, 
             string simTime, string initialTStep, string massInt, string saveInt, 
-            string fpfric, string bciFileName, string bdyFileName, string adaptOff, 
-            string sgcEnable, string dryCheckOn, string elevOff, string maxFroude)
+            string fpfric, string bciFileName, string bdyFileName, bool adaptOff, 
+            bool sgcEnable, bool dryCheckOn, bool elevOff, string maxFroude)
         {
             DEMfile = dEMfile;
             Rootdir = rootdir;
