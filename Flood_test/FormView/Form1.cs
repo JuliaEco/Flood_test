@@ -105,7 +105,7 @@ namespace Flood_test
             if (RootFolderOpen.ShowDialog() == DialogResult.Cancel)
                 return;
             string path = RootFolderOpen.SelectedPath;
-            rootFolderText.Text = path;
+            rootFolder.Text = path;
         }
     }
 }

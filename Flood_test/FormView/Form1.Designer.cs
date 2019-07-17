@@ -207,7 +207,6 @@
             this.label17.Size = new System.Drawing.Size(86, 17);
             this.label17.TabIndex = 32;
             this.label17.Text = "max_Froude";
-            this.label17.Click += new System.EventHandler(this.label17_Click);
             // 
             // label18
             // 
@@ -224,7 +223,6 @@
             this.max_Froude.Name = "max_Froude";
             this.max_Froude.Size = new System.Drawing.Size(100, 22);
             this.max_Froude.TabIndex = 30;
-            this.max_Froude.TextChanged += new System.EventHandler(this.textBox11_TextChanged);
             // 
             // label16
             // 
@@ -334,7 +332,6 @@
             this.label5.Size = new System.Drawing.Size(63, 17);
             this.label5.TabIndex = 13;
             this.label5.Text = "sim_time";
-            this.label5.Click += new System.EventHandler(this.label5_Click);
             // 
             // label6
             // 
@@ -351,7 +348,6 @@
             this.sim_time.Name = "sim_time";
             this.sim_time.Size = new System.Drawing.Size(100, 22);
             this.sim_time.TabIndex = 11;
-            this.sim_time.TextChanged += new System.EventHandler(this.textBox4_TextChanged);
             // 
             // label3
             // 
@@ -386,7 +382,6 @@
             this.resroot.Name = "resroot";
             this.resroot.Size = new System.Drawing.Size(100, 22);
             this.resroot.TabIndex = 6;
-            this.resroot.TextChanged += new System.EventHandler(this.resroot_TextChanged);
             // 
             // DEMpath
             // 
@@ -407,7 +402,6 @@
             this.elevoff.TabIndex = 3;
             this.elevoff.Text = "elevoff";
             this.elevoff.UseVisualStyleBackColor = true;
-            this.elevoff.CheckedChanged += new System.EventHandler(this.elevoff_CheckedChanged);
             // 
             // sgc_enable
             // 
@@ -419,7 +413,6 @@
             this.sgc_enable.TabIndex = 2;
             this.sgc_enable.Text = "sgc_enable";
             this.sgc_enable.UseVisualStyleBackColor = true;
-            this.sgc_enable.CheckedChanged += new System.EventHandler(this.sgc_enable_CheckedChanged);
             // 
             // drycheckon
             // 
@@ -442,7 +435,6 @@
             this.adaptoff.TabIndex = 0;
             this.adaptoff.Text = "adaptoff";
             this.adaptoff.UseVisualStyleBackColor = true;
-            this.adaptoff.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
             // 
             // tabControl1
             // 
