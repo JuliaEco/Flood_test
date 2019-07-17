@@ -1,4 +1,6 @@
 ﻿
+using System;
+
 namespace Presenter
 {
     public class BaseFloodComputePresenter : IPresenter
@@ -22,8 +24,16 @@ namespace Presenter
 
         private void Compute(FloodDataParameters parameters)
         {
-            var result = _service.Compute(parameters);
-            _view.ShowResult(result);
+            try
+            {
+                _configurator.ProjectParameters = parameters;
+                _configurator.CreateProject();
+                var result = _service.Compute(parameters);
+                _view.ShowResult(result);
+            } catch(Exception ex)
+            {
+                _view.ShowResult(ex.Message);
+            }
         }
     }
 }

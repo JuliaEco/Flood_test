@@ -43,8 +43,10 @@ namespace Flood_test
 
         private void Invoke(Action<FloodDataParameters> action)
         {
-            var parameters = new FloodDataParameters(); // you need to replace this constructor
-                                                        //to another in this class and set params from your form
+            var parameters = new FloodDataParameters(DEMpath.Text, resroot.Text, rootFolder.Text,
+            sim_time.Text, init_tstep.Text, massint.Text, saveint.Text,
+             fpfric.Text, BciPath.Text, BdyPath.Text, adaptoff.Checked,
+             sgc_enable.Checked, drycheckon.Checked, elevoff.Checked, max_Froude.Text);
             action?.Invoke(parameters);
         }
 
@@ -103,7 +105,7 @@ namespace Flood_test
             if (RootFolderOpen.ShowDialog() == DialogResult.Cancel)
                 return;
             string path = RootFolderOpen.SelectedPath;
-            rootFolderText.Text = path;
+            rootFolder.Text = path;
         }
     }
 }

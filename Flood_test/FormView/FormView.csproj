@@ -146,6 +146,7 @@
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
-    <PreBuildEvent>xcopy ..\..\..\config\autofac.json $(ProjectDir)\bin\$(ConfigurationName)\ /q /y /s /e</PreBuildEvent>
+    <PreBuildEvent>xcopy ..\..\..\config\autofac.json $(ProjectDir)\bin\$(ConfigurationName)\ /q /y /s /e
+xcopy ..\..\..\Computer\lisfloodRelease_double.exe $(ProjectDir)\bin\$(ConfigurationName)\ /q /y /s /e</PreBuildEvent>
   </PropertyGroup>
 </Project>
