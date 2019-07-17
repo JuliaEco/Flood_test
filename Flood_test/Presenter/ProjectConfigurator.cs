@@ -11,12 +11,10 @@ namespace Presenter
         {
             try
             {
-                if(Directory.Exists(ProjectParameters.ResultFolder))
-                    Directory.Delete(ProjectParameters.ResultFolder, true);
                 Directory.CreateDirectory(ProjectParameters.ResultFolder);
-                File.Copy(ProjectParameters.DEMfile, Path.Combine(ProjectParameters.ResultFolder, Path.GetFileName(ProjectParameters.DEMfile)));
-                File.Copy(ProjectParameters.bcifile, Path.Combine(ProjectParameters.ResultFolder, Path.GetFileName(ProjectParameters.bcifile)));
-                File.Copy(ProjectParameters.bdyfile, Path.Combine(ProjectParameters.ResultFolder, Path.GetFileName(ProjectParameters.bdyfile)));
+                File.Copy(ProjectParameters.DEMfile, Path.Combine(ProjectParameters.ResultFolder, Path.GetFileName(ProjectParameters.DEMfile)), true);
+                File.Copy(ProjectParameters.bcifile, Path.Combine(ProjectParameters.ResultFolder, Path.GetFileName(ProjectParameters.bcifile)), true);
+                File.Copy(ProjectParameters.bdyfile, Path.Combine(ProjectParameters.ResultFolder, Path.GetFileName(ProjectParameters.bdyfile)), true);
                 CreateParamsFile();
             }
             catch(Exception ex)
