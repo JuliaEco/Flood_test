@@ -11,11 +11,11 @@ namespace Model
         private const string UtilityName = "lisfloodRelease_double.exe";
         public string Compute(FloodDataParameters parameters)
         {
-            var newFileName = Path.Combine(parameters.ResultFolder, UtilityName);
-            if (!File.Exists(newFileName))
-            {
-                File.Copy($"../../../Computer/{UtilityName}", newFileName);
-            }
+            //var newFileName = Path.Combine(parameters.ResultFolder, UtilityName);
+            //if (!File.Exists(newFileName))
+            //{
+             //   File.Copy($"../../../Computer/{UtilityName}", newFileName);
+            //}
             var result = RunComputer(parameters);
             return result;
         }
@@ -27,7 +27,7 @@ namespace Model
             {
                 CreateNoWindow = false,
                 UseShellExecute = false,
-                FileName = Path.Combine(parameters.ResultFolder, UtilityName),
+                FileName = UtilityName, //Path.Combine(parameters.ResultFolder, UtilityName),
                 WindowStyle = ProcessWindowStyle.Hidden,
                 Arguments = $"-v {resultFolder}"
             };

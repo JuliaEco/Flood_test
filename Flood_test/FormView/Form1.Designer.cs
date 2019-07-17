@@ -484,7 +484,7 @@
             this.Controls.Add(this.ComputeBtn);
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "Form1";
-            this.Text = "Form1";
+            this.Text = "Flood_test";
             this.tabPage2.ResumeLayout(false);
             this.tabPage2.PerformLayout();
             this.tabControl1.ResumeLayout(false);
