@@ -11,10 +11,10 @@ namespace Model
         private const string UtilityName = "lisfloodRelease_double.exe";
         public string Compute(FloodDataParameters parameters)
         {
-            var newFileName = $"{parameters.ResultFolder}\\{UtilityName}";
+            var newFileName = Path.Combine(parameters.ResultFolder, UtilityName);
             if (!File.Exists(newFileName))
             {
-                File.Copy($"..\\..\\..\\Computer\\{UtilityName}", newFileName);
+                File.Copy($"../../../Computer/{UtilityName}", newFileName);
             }
             var result = RunComputer(parameters);
             return result;
@@ -22,14 +22,14 @@ namespace Model
 
         private string RunComputer(FloodDataParameters parameters)
         {
-            
+            var resultFolder = Path.Combine(parameters.ResultFolder, parameters.resroot);
             ProcessStartInfo startInfo = new ProcessStartInfo
             {
                 CreateNoWindow = false,
                 UseShellExecute = false,
                 FileName = Path.Combine(parameters.ResultFolder, UtilityName),
                 WindowStyle = ProcessWindowStyle.Hidden,
-                Arguments = $"-v {parameters.resroot}"
+                Arguments = $"-v {resultFolder}"
             };
 
             try
@@ -37,6 +37,7 @@ namespace Model
                 using (var exeProcess = Process.Start(startInfo))
                 {
                     exeProcess.WaitForExit();
+                    Directory.Move(parameters.dirroot, Path.Combine(parameters.ResultFolder, parameters.dirroot));
                     return SuccessMessage;
                 }
             }

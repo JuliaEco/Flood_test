@@ -395,6 +395,8 @@
             // elevoff
             // 
             this.elevoff.AutoSize = true;
+            this.elevoff.Checked = true;
+            this.elevoff.CheckState = System.Windows.Forms.CheckState.Checked;
             this.elevoff.Location = new System.Drawing.Point(24, 101);
             this.elevoff.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.elevoff.Name = "elevoff";
@@ -406,6 +408,8 @@
             // sgc_enable
             // 
             this.sgc_enable.AutoSize = true;
+            this.sgc_enable.Checked = true;
+            this.sgc_enable.CheckState = System.Windows.Forms.CheckState.Checked;
             this.sgc_enable.Location = new System.Drawing.Point(24, 47);
             this.sgc_enable.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.sgc_enable.Name = "sgc_enable";
@@ -417,6 +421,8 @@
             // drycheckon
             // 
             this.drycheckon.AutoSize = true;
+            this.drycheckon.Checked = true;
+            this.drycheckon.CheckState = System.Windows.Forms.CheckState.Checked;
             this.drycheckon.Location = new System.Drawing.Point(24, 74);
             this.drycheckon.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.drycheckon.Name = "drycheckon";
@@ -428,6 +434,8 @@
             // adaptoff
             // 
             this.adaptoff.AutoSize = true;
+            this.adaptoff.Checked = true;
+            this.adaptoff.CheckState = System.Windows.Forms.CheckState.Checked;
             this.adaptoff.Location = new System.Drawing.Point(24, 20);
             this.adaptoff.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.adaptoff.Name = "adaptoff";

@@ -11,12 +11,15 @@ namespace Presenter
         {
             var sb = new StringBuilder();
             var type = obj.GetType();
-            IList<PropertyInfo> properties = new List<PropertyInfo>(type.GetProperties(BindingFlags.Public));
+            IList<PropertyInfo> properties = new List<PropertyInfo>(type.GetProperties());
             foreach(var prop in properties)
             {
                 var value = prop.GetValue(obj);
                 sb.AppendLine();
-                sb.Append($"{prop.Name} {value}");
+                if(prop.PropertyType == typeof(bool))
+                    sb.Append(prop.Name);
+                else
+                    sb.Append($"{prop.Name} {value.ToString()}");
             }
             return sb;
         }

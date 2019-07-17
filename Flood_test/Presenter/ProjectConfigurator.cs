@@ -1,9 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Presenter
 {
@@ -15,10 +11,12 @@ namespace Presenter
         {
             try
             {
-                Directory.CreateDirectory(ProjectParameters.dirroot);
-                File.Copy(ProjectParameters.DEMfile, ProjectParameters.ResultFolder);
-                File.Copy(ProjectParameters.bcifile, ProjectParameters.ResultFolder);
-                File.Copy(ProjectParameters.bdyfile, ProjectParameters.ResultFolder);
+                if(Directory.Exists(ProjectParameters.ResultFolder))
+                    Directory.Delete(ProjectParameters.ResultFolder, true);
+                Directory.CreateDirectory(ProjectParameters.ResultFolder);
+                File.Copy(ProjectParameters.DEMfile, Path.Combine(ProjectParameters.ResultFolder, Path.GetFileName(ProjectParameters.DEMfile)));
+                File.Copy(ProjectParameters.bcifile, Path.Combine(ProjectParameters.ResultFolder, Path.GetFileName(ProjectParameters.bcifile)));
+                File.Copy(ProjectParameters.bdyfile, Path.Combine(ProjectParameters.ResultFolder, Path.GetFileName(ProjectParameters.bdyfile)));
                 CreateParamsFile();
             }
             catch(Exception ex)
@@ -30,8 +28,9 @@ namespace Presenter
 
         private void CreateParamsFile()
         {
-            var file = new StreamWriter(Path.Combine(ProjectParameters.ResultFolder, ProjectParameters.resroot));
-            file.WriteLine(FloodDataFormatter.Serialize(ProjectParameters).ToString());
+            var sb = FloodDataFormatter.Serialize(ProjectParameters);
+            File.WriteAllText(Path.Combine(ProjectParameters.ResultFolder, ProjectParameters.resroot),
+                sb.ToString());
         }
 
         public void SaveProject()
