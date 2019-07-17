@@ -14,7 +14,7 @@ namespace Model
            
             if(!File.Exists($"{parameters.Rootdir}\\{UtilityName}"))
             {
-                File.Copy($"..\\..\\..\\Computer\\{UtilityName}", parameters.Rootdir);
+                File.Copy($"..\\..\\..\\Computer\\{UtilityName}", $"{parameters.Rootdir}\\{UtilityName}");
             }
             var result = RunComputer(parameters);
             return result;
