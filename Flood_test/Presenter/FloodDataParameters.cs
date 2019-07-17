@@ -6,8 +6,8 @@ namespace Presenter
     public class FloodDataParameters
     {
         public string DEMfile { get; set; }
+        public string ResultFileName  { get; set; }
         public string Rootdir { get; set; }
-        public string ResultFileName { get; set; }
         public string SimTime { get; set; }
         public string InitialTStep { get; set; }
         public string MassInt { get; set; }
@@ -31,8 +31,8 @@ namespace Presenter
             bool sgcEnable, bool dryCheckOn, bool elevOff, string maxFroude)
         {
             DEMfile = dEMfile;
-            Rootdir = rootdir;
-            ResultFileName = dirroot;
+            ResultFileName = rootdir;
+            Rootdir = dirroot;
             SimTime = simTime;
             InitialTStep = initialTStep;
             MassInt = massInt;

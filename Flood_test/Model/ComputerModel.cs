@@ -11,7 +11,11 @@ namespace Model
         private const string UtilityName = "lisfloodRelease_double.exe";
         public string Compute(FloodDataParameters parameters)
         {
-            File.Copy($"..\\..\\..\\Computer\\{UtilityName}", parameters.Rootdir);
+           
+            if(!File.Exists($"{parameters.Rootdir}\\{UtilityName}"))
+            {
+                File.Copy($"..\\..\\..\\Computer\\{UtilityName}", parameters.Rootdir);
+            }
             var result = RunComputer(parameters);
             return result;
         }
