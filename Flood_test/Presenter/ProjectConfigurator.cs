@@ -15,23 +15,22 @@ namespace Presenter
         {
             try
             {
-                if (!Directory.Exists(ProjectParameters.Rootdir))
-                    Directory.CreateDirectory(ProjectParameters.Rootdir);
-                File.Copy(ProjectParameters.DEMfile, ProjectParameters.Rootdir);
-                File.Copy(ProjectParameters.BciFileName, ProjectParameters.Rootdir);
-                File.Copy(ProjectParameters.BdyFileName, ProjectParameters.Rootdir);
+                Directory.CreateDirectory(ProjectParameters.dirroot);
+                File.Copy(ProjectParameters.DEMfile, ProjectParameters.ResultFolder);
+                File.Copy(ProjectParameters.bcifile, ProjectParameters.ResultFolder);
+                File.Copy(ProjectParameters.bdyfile, ProjectParameters.ResultFolder);
                 CreateParamsFile();
             }
-            catch
+            catch(Exception ex)
             {
-                throw;
+                throw ex;
             }
 
         }
 
         private void CreateParamsFile()
         {
-            var file = new StreamWriter(Path.Combine(ProjectParameters.Rootdir, ProjectParameters.ResultFileName));
+            var file = new StreamWriter(Path.Combine(ProjectParameters.ResultFolder, ProjectParameters.resroot));
             file.WriteLine(FloodDataFormatter.Serialize(ProjectParameters).ToString());
         }
 

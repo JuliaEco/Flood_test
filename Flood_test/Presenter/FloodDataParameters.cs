@@ -6,20 +6,22 @@ namespace Presenter
     public class FloodDataParameters
     {
         public string DEMfile { get; set; }
-        public string ResultFileName  { get; set; }
-        public string Rootdir { get; set; }
-        public string SimTime { get; set; }
-        public string InitialTStep { get; set; }
-        public string MassInt { get; set; }
-        public string SaveInt { get; set; }
-        public string Fpfric { get; set; }
-        public string BciFileName { get; set; }
-        public string BdyFileName { get; set; }
-        public bool AdaptOff { get; set; }
-        public bool SgcEnable { get; set; }
-        public bool DryCheckOn { get; set; }
-        public bool ElevOff { get; set; }
-        public string MaxFroude { get; set; }
+        public string resroot  { get; set; }
+        public string ResultFolder { get; set; }
+        public string sim_time { get; set; }
+        public string initial_tstep { get; set; }
+        public string massint { get; set; }
+        public string saveint { get; set; }
+        public string fpfric { get; set; }
+        public string bcifile { get; set; }
+        public string bdyfile { get; set; }
+        public bool adaptoff { get; set; }
+        public bool sgc_enable { get; set; }
+        public bool drycheckon { get; set; }
+        public bool elevoff { get; set; }
+        public string max_Froude { get; set; }
+
+        public string dirroot { get; set; } = "result_folder";
 
         public FloodDataParameters()
         {
@@ -31,20 +33,20 @@ namespace Presenter
             bool sgcEnable, bool dryCheckOn, bool elevOff, string maxFroude)
         {
             DEMfile = dEMfile;
-            ResultFileName = rootdir;
-            Rootdir = dirroot;
-            SimTime = simTime;
-            InitialTStep = initialTStep;
-            MassInt = massInt;
-            SaveInt = saveInt;
-            Fpfric = fpfric;
-            BciFileName = bciFileName;
-            BdyFileName = bdyFileName;
-            AdaptOff = adaptOff;
-            SgcEnable = sgcEnable;
-            DryCheckOn = dryCheckOn;
-            ElevOff = elevOff;
-            MaxFroude = maxFroude;
+            resroot = rootdir;
+            this.ResultFolder = dirroot;
+            sim_time = simTime;
+            initial_tstep = initialTStep;
+            massint = massInt;
+            saveint = saveInt;
+            this.fpfric = fpfric;
+            bcifile = bciFileName;
+            bdyfile = bdyFileName;
+            adaptoff = adaptOff;
+            sgc_enable = sgcEnable;
+            drycheckon = dryCheckOn;
+            elevoff = elevOff;
+            max_Froude = maxFroude;
         }
     }
 }
